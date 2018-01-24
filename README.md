@@ -1,6 +1,6 @@
-# require-context v1.1.1
+# require-context v1.1.4
 
-changes: this version supports a directory or an array of directories
+changes: this version supports a directory or an array of directories (which, yes, is dangerous because of collisions. but useful for submodules in some contexts)
 
 ## Installation
 

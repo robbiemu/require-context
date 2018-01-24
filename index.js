@@ -7,8 +7,8 @@ module.exports = function(d, recursive, regExp) {
   }
   
   const keysMap = {}
-  keysmap.keys = []
-  keysmap.directories = {}
+  keysMap.keys = []
+  keysMap.directories = {}
   
   d.forEach(directory => {
     let basepath =

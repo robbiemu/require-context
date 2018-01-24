@@ -1,7 +1,7 @@
 {
   "name": "require-context-arr",
-  "version": "1.1.3",
-  "description": "Require with an expression. This version supports an array of directories",
+  "version": "1.1.4",
+  "description": "Require with an expression. This version supports an array of directories (which yes, is dangerous, because of collisions)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
