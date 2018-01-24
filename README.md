@@ -1,4 +1,6 @@
-# require-context v1.0.2
+# require-context v1.1.1
+
+changes: this version supports a directory or an array of directories
 
 ## Installation
 

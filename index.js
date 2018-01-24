@@ -6,7 +6,10 @@ module.exports = function(d, recursive, regExp) {
     d = [d]
   }
   
-  let keys = []
+  const keysMap = {}
+  keysmap.keys = []
+  keysmap.directories = {}
+  
   d.forEach(directory => {
     let basepath =
       directory[0] === '.'
@@ -31,27 +34,23 @@ module.exports = function(d, recursive, regExp) {
         sync: true,
         recursive: recursive || false
       })
-      .filter(function(file) {
-        return file.match(regExp || /\.(json|js)$/)
-      })
-      .map(function(file) {
-        return '.' + path.sep + file.slice(basepath.length + 1)
-      })    
+      .filter(file => file.match(regExp || /\.(json|js)$/))
+      .map(file => '.' + path.sep + file.slice(basepath.length + 1))    
       
-    keys = keys.concat(dirKeys)
+    keysMap.keys = keysMap.keys.concat(dirKeys)
+    keysMap.directories[key] = directory
   })
-
 
   const context = function(key) {
     return require(context.resolve(key))
   }
 
   context.resolve = function(key) {
-    return directory + path.sep + key
+    return keysMap.directories[key] + path.sep + key
   }
 
   context.keys = function() {
-    return keys
+    return keysMap.keys
   }
 
   return context

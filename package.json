@@ -1,14 +1,14 @@
 {
-  "name": "require-context",
-  "version": "1.0.2",
-  "description": "Require with an expression.",
+  "name": "require-context-arr",
+  "version": "1.1.1",
+  "description": "Require with an expression. This version supports an array of directories",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wilsonlewis/require-context.git"
+    "url": "git+https://github.com/robbiemu/require-context.git"
   },
   "keywords": [
     "node",
