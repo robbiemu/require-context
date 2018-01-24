@@ -31,8 +31,13 @@ module.exports = function(d, recursive, regExp) {
         sync: true,
         recursive: recursive || false
       })
-      .filter(file => file.match(regExp || /\.(json|js)$/))
-      .map(file => '.' + path.sep + file.slice(basepath.length + 1))
+      .filter(function(file) {
+        return file.match(regExp || /\.(json|js)$/)
+      })
+      .map(function(file) {
+        return '.' + path.sep + file.slice(basepath.length + 1)
+      })    
+      
     keys = keys.concat(dirKeys)
   })
 
